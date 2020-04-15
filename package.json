@@ -1,0 +1,28 @@
+{
+  "name": "bodaasset",
+  "version": "1.0.0",
+  "description": "boda boda asset financing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gs-maker/bodaAsset.git"
+  },
+  "author": "gssali",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gs-maker/bodaAsset/issues"
+  },
+  "homepage": "https://github.com/gs-maker/bodaAsset#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
