@@ -41,7 +41,7 @@
 <body class="container">
    <h1>Sales Executive Registration</h1>
    <p>Fill in all the required details to create an account.</p>
-   <form action="submit" method="POST">
+   <form action="/agent/registration" method="POST">
       <fieldset class="col-md-12">
          <legend class="col-md-4">Personal Information</legend>
 
@@ -51,18 +51,19 @@
                   <div class="col-md-4 mb-3">
                      <label for="validationDefault01">First name</label>
                      <input type="text" class="form-control" id="validationDefault01" placeholder="enter first name"
-                        value="enter first name" required>
+                        value="enter first name" name="firstName" required>
                   </div>
                   <div class="col-md-4 mb-3">
                      <label for="validationDefault02">Last name</label>
                      <input type="text" class="form-control" id="validationDefault02" placeholder="enter last name"
-                        value="enter last name" required>
+                        value="enter last name" name="lastName" required>
                   </div>
                   <div class="col-md-4 mb-3">
                      <label for="validationDefaultUsername">ID Number</label>
                      <div class="input-group">
                         <input type="text" class="form-control" id="validationDefaultUsername"
-                           placeholder="National ID  Number" aria-describedby="inputGroupPrepend2" required>
+                           placeholder="National ID  Number" aria-describedby="inputGroupPrepend2" name="idNum"
+                           required>
                      </div>
                   </div>
                </div>
@@ -76,10 +77,10 @@
                </div>
                <div class="form-group col-md-4">
                   <label for="inputState">Division</label>
-                  <select id="inputState" class="form-control" name="division">
-                     <option selected>Nakawa</option>
-                     <option>Rubaga</option>
-                     <option>Kawempe</option>
+                  <select id="inputState" class="form-control" name="resDivision">
+                     <option selected>Nakawa Division</option>
+                     <option>Rubaga Division</option>
+                     <option>Kawempe Division</option>
                   </select>
                </div>
                <div class="form-group col-md-4">
@@ -104,12 +105,14 @@
                      <div class="input-group-prepend">
                         <div class="input-group-text">+256</div>
                      </div>
-                     <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="XXX-XXXXXX">
+                     <input type="text" name="phone" class="form-control" id="inlineFormInputGroup"
+                        placeholder="XXX-XXXXXX">
                   </div>
                </div>
                <div class="col-md-4 mb-3">
                   <label for="validationDefault05">Date of birth</label>
-                  <input type="date" class="form-control" id="validationDefault05" placeholder="DD/MM/YY" required>
+                  <input type="date" name="dob" class="form-control" id="validationDefault05" placeholder="DD/MM/YY"
+                     required>
                </div>
             </div>
          </div>
@@ -163,7 +166,7 @@
                </div>
                <div class="form-group col-md-4">
                   <label for="inputZip">Work station</label>
-                  <select type="text" class="form-control" id="parish" name="workStation">
+                  <select type="text" class="form-control" id="workStation" name="workStation">
                      <option selected>Headquarters</option>
                      <option>Kawempe Branch</option>
                      <option>Kabalagala</option>

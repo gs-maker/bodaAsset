@@ -21,6 +21,8 @@ server.use(bodyParser.urlencoded({ extended: true }))
 // imported routes
 const customerRoute = require('./routes/customerRoute')
 server.use('/customer', customerRoute)
+const agentRoute = require('./routes/agentRoute')
+server.use('/agent', agentRoute)
 
 
 // listening port
