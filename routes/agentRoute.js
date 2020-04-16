@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const path = require('path')
-const Customer = require('../models/customerModel')
+const Agent = require('../models/customerModel')
 
 // routes
 router.get('/', (req, res) => {
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 // save to the database
 router.post('/registration', async (req, res) => {
    try {
-      const customer = new Customer(req.body)
+      const customer = new Agent(req.body)
       await customer.save()
    } catch (error) {
       console.log(error)

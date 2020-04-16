@@ -4,17 +4,32 @@ const mongoose = require('mongoose')
 const customerSchema = new mongoose.Schema({
    firstName: String,
    lastName: String,
-   maritalStatus: String,
-   address: String,
-   dob: String,
-   IdNum: String,
+   idNum: String,
+   residence: String,
+   redDivision: String,
+   parish: String,
    email: String,
+   phone: String,
+   dob: Date,
    phoneNum: String,
    vehicle: String,
    stageName: String,
-   councilOne: String,
-   councilThree: String,
+   workDivision: String,
+   chairman: String,
+   serialNum: String,
+   regDate: {
+      type: Date,
+      default: Date.now
+   },
+   vmake: String,
+   business: String,
+   period: String,
+   initPay: String,
+   balPay: String,
+   monthlyPay: String,
    customerID: String,
+   refName: String,
+   refNum: String
 })
 
 // schema export for external use
