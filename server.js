@@ -1,6 +1,8 @@
 // express server setup
 const express = require('express')
 const server = express()
+const path = require('path')
+server.use('/static', express.static(path.join(__dirname, 'public')))
 
 
 // mongodb connection
@@ -13,6 +15,9 @@ mongoose.connect('mongodb://localhost:27017/bodaAsset',
 
 
 // middleware
+server.set('views', __dirname + '/views')
+server.set('view engine', 'pug')
+
 const bodyParser = require('body-parser')
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))

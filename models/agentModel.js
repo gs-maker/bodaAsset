@@ -12,7 +12,7 @@ const agentSchema = new mongoose.Schema({
    phone: String,
    dob: Date,
    emNumber: String,
-   startDate: {
+   comDate: {
       type: Date,
       default: Date.now
    },

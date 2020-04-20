@@ -9,11 +9,10 @@ router.get('/', (req, res) => {
 })
 
 // save to the database
-router.post('/agent', async (req, res) => {
+router.post('/registration', async (req, res) => {
    try {
       const agent = new Agent(req.body)
-      console.log(req.body)
-      // await agent.save()
+      await agent.save()
    } catch (error) {
       console.log(error)
       res.status(400, 'unable to save to database')
