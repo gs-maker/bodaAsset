@@ -6,11 +6,11 @@
    font-size:16px;
 }
 
-body{
+/* body{
    margin: 0 auto;
    width: 1000px;
    background-color:rgb(241, 241, 241);
-}
+} */
 
 fieldset {
 	border: 1px solid #ddd !important;

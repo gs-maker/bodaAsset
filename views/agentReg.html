@@ -8,19 +8,17 @@
    <link rel="stylesheet" href="/static/agentReg.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-   <!-- <script src="https://kit.fontawesome.com/d091d0e08c.js" crossorigin="anonymous"></script> -->
 </head>
 
-<body class="container">
-   <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+<body>
+   <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark fixed-top shadow-sm">
       <div class="container">
          <a href="#" class="navbar-brand">
             <!-- Logo Image -->
             <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt=""
                class="d-inline-block align-middle mr-2">
             <!-- Logo Text -->
-            <span class="text-uppercase font-weight-bold">Company</span>
+            <span class="text-uppercase font-weight-bold">Boda Banja</span>
          </a>
 
          <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -31,177 +29,203 @@
             <ul class="navbar-nav ml-auto">
                <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
                </li>
-               <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-               <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-               <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+               <li class="nav-item"><a href="#" class="nav-link">Employee Registration</a></li>
+               <li class="nav-item"><a href="#" class="nav-link">Administration</a></li>
+               <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
             </ul>
          </div>
       </div>
    </nav>
+   <br>
+   <!-- end of navigation -->
 
-   <div class="container">
+   <div class="container" style="padding-top:100px">
       <h1>Employee Registration</h1>
       <p>Fill in all the required details to create an account.</p>
-      <form action="/agent/registration" method="POST">
-         <fieldset class="col-md-12">
-            <legend class="col-md-4">Personal Information</legend>
+      <form action="/agent/registration" method="POST"></form>
+   </div>
+   <div class="container">
+      <fieldset class="col-md-12">
+         <legend class="col-md-4">Personal Information</legend>
 
-            <div class="panel panel-default">
-               <div class="panel-body">
-                  <div class="form-row">
-                     <div class="col-md-4 mb-3">
-                        <label for="validationDefault01">First name</label>
-                        <input type="text" class="form-control" id="validationDefault01" placeholder="enter first name"
-                           value="enter first name" name="firstName" required>
-                     </div>
-                     <div class="col-md-4 mb-3">
-                        <label for="validationDefault02">Last name</label>
-                        <input type="text" class="form-control" id="validationDefault02" placeholder="enter last name"
-                           value="enter last name" name="lastName" required>
-                     </div>
-                     <div class="col-md-4 mb-3">
-                        <label for="validationDefaultUsername">ID Number</label>
-                        <div class="input-group">
-                           <input type="text" class="form-control" id="validationDefaultUsername"
-                              placeholder="National ID  Number" aria-describedby="inputGroupPrepend2" name="idNum"
-                              required>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="form-row">
-                  <div class="form-group col-md-4">
-                     <label for="inputCity">Place of Residence</label>
-                     <input type="text" class="form-control" id="residence" name="residence"
-                        placeholder="21E, Mulimira Zone, Block 28B">
-                  </div>
-                  <div class="form-group col-md-4">
-                     <label for="inputState">Division</label>
-                     <select id="inputState" class="form-control" name="resDivision">
-                        <option selected>Nakawa Division</option>
-                        <option>Rubaga Division</option>
-                        <option>Kawempe Division</option>
-                     </select>
-                  </div>
-                  <div class="form-group col-md-4">
-                     <label for="inputZip">Parish</label>
-                     <select type="text" class="form-control" id="parish" name="parish">
-                        <option selected>Mulimira Zone</option>
-                        <option>St. Agnes Zone</option>
-                        <option>Sebbowa Zone</option>
-                     </select>
-                  </div>
-               </div>
-
+         <div class="panel panel-default">
+            <div class="panel-body">
                <div class="form-row">
                   <div class="col-md-4 mb-3">
-                     <label for="validationDefault03">Email Address</label>
-                     <input type="email" class="form-control" id="validationDefault03" placeholder="email address"
-                        required>
+                     <label for="validationDefault01">First name</label>
+                     <input type="text" class="form-control" id="validationDefault01" placeholder="enter first name"
+                        value="" name="firstName" required>
                   </div>
                   <div class="col-md-4 mb-3">
-                     <label for="validationDefault04">Phone Number</label>
-                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                           <div class="input-group-text">+256</div>
-                        </div>
-                        <input type="text" name="phone" class="form-control" id="inlineFormInputGroup"
-                           placeholder="XXX-XXXXXX">
-                     </div>
+                     <label for="validationDefault02">Last name</label>
+                     <input type="text" class="form-control" id="validationDefault02" placeholder="enter last name"
+                        value="" name="lastName" required>
                   </div>
                   <div class="col-md-4 mb-3">
-                     <label for="validationDefault05">Date of birth</label>
-                     <input type="date" name="dob" class="form-control" id="validationDefault05" placeholder="DD/MM/YY"
-                        required>
-                  </div>
-               </div>
-            </div>
-         </fieldset>
-         <br>
-
-
-         <fieldset class="col-md-12">
-            <legend class="col-md-4">Employment Details</legend>
-            <div class="panel panel-default">
-               <div class="panel-body">
-                  <div class="form-row">
-                     <div class="col-md-6 mb-3">
-                        <label for="validationDefault01">Employee Number</label>
-                        <input type="text" class="form-control" id="validationDefault01" name="emNumber"
-                           placeholder="employee number" value="employee number" required>
-                     </div>
-                     <div class="col-md-3 mb-3">
-                        <label for="validationDefault02">Start Date</label>
-                        <input type="date" class="form-control" id="validationDefault02" placeholder="enter start date"
-                           name="comDate">
-                     </div>
-                     <div class="form-group col-md-3">
-                        <label for="inputCity">Employement Status</label>
-                        <select type="text" id="inputState" class="form-control" name="emStatus">
-                           <option selected>Probation</option>
-                           <option>Contract</option>
-                           <option>Temporary</option>
-                        </select>
+                     <label for="validationDefaultUsername">ID Number</label>
+                     <div class="input-group">
+                        <input type="text" class="form-control" id="validationDefaultUsername"
+                           placeholder="National ID  Number" aria-describedby="inputGroupPrepend2" name="idNum"
+                           required>
                      </div>
                   </div>
                </div>
+            </div>
 
-               <div class="form-row">
-                  <div class="form-group col-md-4">
-                     <label for="inputCity">Assigned Role</label>
-                     <select id="inputState" class="form-control" name="role">
-                        <option selected>Administration</option>
-                        <option>Supervisor</option>
-                        <option>Sales Agent</option>
-                     </select>
-                  </div>
-                  <div class="form-group col-md-4">
-                     <label for="inputState">Reporting Authority</label>
-                     <select id="inputState" class="form-control" name="supervisor">
-                        <option selected>Nathaniel Arthur</option>
-                        <option>Micah Ssali</option>
-                        <option>David Kibaya</option>
-                     </select>
-                  </div>
-                  <div class="form-group col-md-4">
-                     <label for="inputZip">Work station</label>
-                     <select type="text" class="form-control" id="workStation" name="workStation">
-                        <option selected>Headquarters</option>
-                        <option>Kawempe Branch</option>
-                        <option>Kabalagala</option>
-                     </select>
+            <div class="form-row">
+               <div class="form-group col-md-4">
+                  <label for="inputCity">Place of Residence</label>
+                  <input type="text" class="form-control" id="residence" name="residence"
+                     placeholder="21E, Mulimira Zone, Block 28B">
+               </div>
+               <div class="form-group col-md-4">
+                  <label for="inputState">Division</label>
+                  <select id="inputState" class="form-control" name="resDivision">
+                     <option selected>Nakawa Division</option>
+                     <option>Rubaga Division</option>
+                     <option>Kawempe Division</option>
+                  </select>
+               </div>
+               <div class="form-group col-md-4">
+                  <label for="inputZip">Parish</label>
+                  <select type="text" class="form-control" id="parish" name="parish">
+                     <option selected>Mulimira Zone</option>
+                     <option>St. Agnes Zone</option>
+                     <option>Sebbowa Zone</option>
+                  </select>
+               </div>
+            </div>
+
+            <div class="form-row">
+               <div class="col-md-4 mb-3">
+                  <label for="validationDefault03">Email Address</label>
+                  <input type="email" class="form-control" id="validationDefault03" placeholder="email address"
+                     required>
+               </div>
+               <div class="col-md-4 mb-3">
+                  <label for="validationDefault04">Phone Number</label>
+                  <div class="input-group mb-3">
+                     <div class="input-group-prepend">
+                        <div class="input-group-text">+256</div>
+                     </div>
+                     <input type="text" name="phone" class="form-control" id="inlineFormInputGroup"
+                        placeholder="XXX-XXXXXX">
                   </div>
                </div>
-               <hr>
-
-            </div>
-            <br>
-         </fieldset>
-         <br>
-
-         <fieldset>
-            <legend>Employee Credentials</legend>
-            <div>
-               <label for="userName">Username</label>
-               <input type="text" name="userName" id="userName">
-               <button>Generate Useraname</button>
-            </div>
-            <div>
-               <label for="emPass">Employee Password</label>
-               <input type="text" name="emPass" id="emPass">
-               <button>Generate Password</button>
-            </div>
-         </fieldset>
-
-         <div class="row" style="display:flex">
-            <div class="col-lg-12">
-               <button type="reset" class="btn btn-dark col-md-2 float-right" style="margin-left:5px">Reset</button>
-               <button type="submit" class="btn btn-success col-md-2 float-right">Submit</button>
+               <div class="col-md-4 mb-3">
+                  <label for="validationDefault05">Date of birth</label>
+                  <input type="date" name="dob" class="form-control" id="validationDefault05" placeholder="DD/MM/YY"
+                     required>
+               </div>
             </div>
          </div>
+      </fieldset>
+      <br>
+   </div>
+
+   <div class="container">
+      <fieldset class="col-md-12">
+         <legend class="col-md-4">Employment Details</legend>
+         <div class="panel panel-default">
+            <div class="panel-body">
+               <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                     <label for="validationDefault01">Employee Number</label>
+                     <input type="text" class="form-control" id="validationDefault01" name="emNumber"
+                        placeholder="employee number" value="" required>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                     <label for="validationDefault02">Start Date</label>
+                     <input type="date" class="form-control" id="validationDefault02" placeholder="enter start date"
+                        name="comDate">
+                  </div>
+                  <div class="form-group col-md-3">
+                     <label for="inputCity">Employement Status</label>
+                     <select type="text" id="inputState" class="form-control" name="emStatus">
+                        <option selected>Probation</option>
+                        <option>Contract</option>
+                        <option>Temporary</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+
+            <div class="form-row">
+               <div class="form-group col-md-4">
+                  <label for="inputCity">Assigned Role</label>
+                  <select id="inputState" class="form-control" name="role">
+                     <option selected>Administration</option>
+                     <option>Supervisor</option>
+                     <option>Sales Agent</option>
+                  </select>
+               </div>
+               <div class="form-group col-md-4">
+                  <label for="inputState">Reporting Authority</label>
+                  <select id="inputState" class="form-control" name="supervisor">
+                     <option selected>Nathaniel Arthur</option>
+                     <option>Micah Ssali</option>
+                     <option>David Kibaya</option>
+                  </select>
+               </div>
+               <div class="form-group col-md-4">
+                  <label for="inputZip">Work station</label>
+                  <select type="text" class="form-control" id="workStation" name="workStation">
+                     <option selected>Headquarters</option>
+                     <option>Kawempe Branch</option>
+                     <option>Kabalagala</option>
+                  </select>
+               </div>
+            </div>
+            <hr>
+         </div>
+
+         <h3>Employee credentials</h3>
+         <div class="input-group mb-3 col-md-6" style="margin-left:-15px">
+            <input type="text" class="form-control" placeholder="employee username" aria-label="Recipient's username"
+               aria-describedby="basic-addon2">
+            <div class="input-group-append">
+               <button class="btn btn-outline-secondary" type="button">GENERATE</button>
+            </div>
+         </div>
+
+         <div class="input-group mb-3 col-md-6" style="margin-left:-15px">
+            <input type="text" class="form-control" placeholder="employee password" aria-label="Recipient's username"
+               aria-describedby="basic-addon2">
+            <div class="input-group-append">
+               <button class="btn btn-outline-secondary" type="button">GENERATE</button>
+            </div>
+         </div>
+      </fieldset>
+      <br>
+
+      <div class="row" style="display:flex">
+         <div class="col-lg-12">
+            <button type="submit" class="btn btn-primary col-md-2 float-right" style="margin-left:5px">Register</button>
+            <button type="reset" class="btn btn-dark col-md-2 float-right">Reset</button>
+         </div>
+      </div>
       </form>
    </div>
+
+   <!-- footer starts here -->
+   <div id="footer">
+      <div class="container">
+         <hr>
+         &copy; Copyright 2020, A Gerald Ssali Holdings Company</p>
+      </div>
+   </div>
+
+   <script src="static/customerReg.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+</body>
 </body>
 
 </html>

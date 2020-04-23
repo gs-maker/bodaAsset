@@ -127,12 +127,18 @@
       .signup-form form a:hover {
          text-decoration: underline;
       }
+
+      .wrongInput {
+         border: 1px solid red;
+         animation: shake 0.5s;
+         animation-iteration-count: 2;
+      }
    </style>
 </head>
 
 <body>
    <div class="signup-form">
-      <form action="/login" method="post">
+      <form action="/login" method="post" onsubmit="return register()" id="registerForm" name="registerForm">
          <h2>Register</h2>
          <p class="hint-text">Create your account to register employees and assign roles. It will only takes a minute.
          </p>
@@ -140,6 +146,7 @@
             <div class="row">
                <div class="col-md-6"><input type="text" class="form-control" name="first_name" placeholder="First Name"
                      required="required"></div>
+               <p class="error"></p>
                <div class="col-md-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name"
                      required="required"></div>
             </div>
@@ -164,6 +171,8 @@
       </form>
       <div class="text-center">Already have an account? <a href="./login.html">Sign in</a></div>
    </div>
+   <script src="/public/register.js">
+   </script>
 </body>
 
 </html>
