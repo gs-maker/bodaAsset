@@ -5,7 +5,7 @@ const customerSchema = new mongoose.Schema({
    firstName: String,
    lastName: String,
    idNum: String,
-   residence: String,
+   homeAddress:String,
    resDivision: String,
    parish: String,
    email: String,

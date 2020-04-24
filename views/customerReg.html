@@ -29,7 +29,7 @@
             <ul class="navbar-nav ml-auto">
                <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
                </li>
-               <li class="nav-item"><a href="#" class="nav-link">Customer Registration</a></li>
+               <li class="nav-item"><a href="#" class="nav-link"> Registration</a></li>
                <li class="nav-item"><a href="#" class="nav-link">Sales Tools</a></li>
                <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
             </ul>
@@ -67,13 +67,9 @@
                   </div>
                   <div class="col-md-4 mb-3">
                      <label for="validationDefaultUsername">ID Number</label>
-                     <div class="input-group">
-                        <input type="text" class="form-control" id="validationDefaultUsername"
-                           placeholder="National ID  Number" aria-describedby="inputGroupPrepend2" name="idNum">
-                     </div>
-                     <div>
-                        <p class="text-danger" id="is-valid3"></p>
-                     </div>
+                     <input type="text" class="form-control" id="validationDefaultUsername"
+                        placeholder="National ID  Number" aria-describedby="inputGroupPrepend2" name="idNum">
+                     <p class="text-danger" id="is-valid3"></p>
                   </div>
                </div>
             </div>
@@ -83,22 +79,27 @@
                   <label for="inputCity">Place of Residence</label>
                   <input type="text" class="form-control" id="homeAddress" name="homeAddress"
                      placeholder="21E, Mulimira Zone, Block 28B">
+                  <p class="text-danger" id="is-valid4"></p>
                </div>
                <div class="form-group col-md-4">
                   <label for="inputState">Division</label>
                   <select type="text" id="inputState" class="form-control" name="resDivision">
-                     <option value="default" selected>Nakawa Division</option>
-                     <option>Rubaga Division</option>
-                     <option>Kawempe Division</option>
+                     <option value="default" selected>Choose...</option>
+                     <option value="Nakawa Division">Nakawa Division</option>
+                     <option value="Rubaga Division">Rubaga Division</option>
+                     <option value="Kawempe Division">Kawempe Division</option>
                   </select>
+                  <p class="text-danger" id="is-valid5"></p>
                </div>
                <div class="form-group col-md-4">
                   <label for="inputZip">Parish</label>
                   <select type="text" class="form-control" id="parish" name="parish">
-                     <option selected>Mulimira Zone</option>
-                     <option>St. Agnes Zone</option>
-                     <option>Sebbowa Zone</option>
+                     <option value="default" selected>Choose...</option>
+                     <option value="Mulimira Zone">Mulimira Zone</option>
+                     <option value="St. Agnes Zone">St. Agnes Zone</option>
+                     <option value="Sebbowa Zone">Sebbowa Zone</option>
                   </select>
+                  <p class="text-danger" id="is-valid6"></p>
                </div>
             </div>
 
@@ -107,6 +108,7 @@
                   <label for="validationDefault03">Email Address</label>
                   <input type="email" class="form-control" id="validationDefault03" placeholder="email address"
                      name="emAddress" id="emAddress">
+                  <p class="text-danger" id="is-valid7"></p>
                </div>
                <div class="col-md-4 mb-3">
                   <label for="validationDefault04">Phone Number</label>
@@ -117,11 +119,13 @@
                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="XXX-XXXXXX"
                         name="phone" id="phone">
                   </div>
+                  <p class="text-danger" id="is-valid8"></p>
                </div>
                <div class="col-md-4 mb-3">
                   <label for="validationDefault05">Date of birth</label>
                   <input type="date" class="form-control" id="validationDefault05" placeholder="DD/MM/YY" name="dob"
                      id="dob">
+                  <p class="text-danger" id="is-valid9"></p>
                </div>
             </div>
          </div>
@@ -129,6 +133,7 @@
    </div>
    <br>
 
+   <!-- asset information -->
    <div class="container">
       <fieldset class="col-md-12">
          <legend class="col-md-4">Asset Information</legend>
@@ -138,30 +143,37 @@
                <div class="col-md-3 mb-3">
                   <label for="validationDefault01">Vehicle type</label>
                   <select type="text" class="form-control" id="vehicle" name="vehicle">
-                     <option selected>Motorcycle</option>
-                     <option>Tuktuk</option>
+                     <option value="default" selected>Choose...</option>
+                     <option value="Motorcycle">Motorcycle</option>
+                     <option value="TukTuk">Tuktuk</option>
                   </select>
+                  <p class="text-danger" id="is-valid10"></p>
                </div>
                <div class="form-group col-md-3">
                   <label for="inputState">Stage name</label>
                   <select id="inputState" class="form-control" name="stageName">
-                     <option selected>Acacia Mall Stage B</option>
-                     <option>Kobil Kamwokya Stage</option>
-                     <option>Mediteraneo Stage</option>
+                     <option value="default" selected>Choose...</option>
+                     <option value="Kira Road Stage B">Kira Road Stage B</option>
+                     <option value="Kobile Kamwokya Stage">Kobil Kamwokya Stage</option>
+                     <option value="Kasasiro Stage">Kasasiro Stage</option>
                   </select>
+                  <p class="text-danger" id="is-valid11"></p>
                </div>
                <div class="form-group col-md-3">
                   <label for="inputZip">Division</label>
                   <select type="text" class="form-control" id="parish" name="workDivision">
-                     <option selected>Nakawa Division</option>
-                     <option>Rubaga Division</option>
-                     <option>Kawempe Division</option>
+                     <option value="default" selected>Choose...</option>
+                     <option value="Nakawa Division">Nakawa Division</option>
+                     <option value="Rubaga Division">Rubaga Division</option>
+                     <option value="Kawempe Division">Kawempe Division</option>
                   </select>
+                  <p class="text-danger" id="is-valid12"></p>
                </div>
                <div class="form-group col-md-3">
                   <label for="inputCity">Stage Chairman</label>
                   <input type="text" class="form-control" id="chairman" name="chairman">
                </div>
+               <p class="text-danger" id="is-valid13"></p>
             </div>
 
             <div class="form-row">
@@ -169,28 +181,34 @@
                   <label for="validationDefault03">Serial Number</label>
                   <input type="text" class="form-control" id="validationDefault03" name="serialNum"
                      placeholder="Chasis/VIN">
+                  <p class="text-danger" id="is-valid13"></p>
                </div>
                <div class="col-md-3 mb-3">
                   <label for="validationDefault05">Registration date</label>
                   <input type="date" class="form-control" id="validationDefault05" placeholder="DD/MM/YY"
                      name="regDate">
+                  <p class="text-danger" id="is-valid14"></p>
                </div>
                <div class="form-group col-md-3">
                   <label for="inputZip">Vehicle Make</label>
                   <select type="text" class="form-control" id="vmake" name="vmake">
-                     <option selected>Mahindra</option>
-                     <option>Hero</option>
-                     <option>Bajaj</option>
-                     <option>Honda</option>
+                     <option value="default" selected>Choose...</option>
+                     <option value="Mahindra">Mahindra</option>
+                     <option value="Hero">Hero</option>
+                     <option value="Bajaj">Bajaj</option>
+                     <option value="Honda">Honda</option>
                   </select>
+                  <p class="text-danger" id="is-valid15"></p>
                </div>
                <div class="form-group col-md-3">
                   <label for="inputZip">Business Type</label>
                   <select type="text" class="form-control" id="business" name="business">
-                     <option selected>BodaBoda</option>
-                     <option>Delivery Vehicle</option>
-                     <option>Passenger Vehicle</option>
+                     <option value="default" selected>Choose...</option>
+                     <option value="BodaBoda">BodaBoda</option>
+                     <option value="Delivery Vehicle">Delivery Vehicle</option>
+                     <option value="Passenger Vehicle">Passenger Vehicle</option>
                   </select>
+                  <p class="text-danger" id="is-valid16"></p>
                </div>
             </div>
          </div>
@@ -198,6 +216,8 @@
    </div>
    <br>
 
+
+   <!-- payement details -->
    <div class="container">
       <fieldset class="col-md-12">
          <legend class="col-md-4">Payment Details</legend>
@@ -208,10 +228,12 @@
                   <div class="col-md-3 mb-3">
                      <label for="validationDefault02">Payment Period</label>
                      <select type="text" class="form-control" id="validationDefault02" name="period">
-                        <option selected> 1 year</option>
-                        <option>2 years</option>
-                        <option>3 years</option>
+                        <option value="default" selected>Choose...</option>
+                        <option value="1 year"> 1 year</option>
+                        <option value="2 years">2 years</option>
+                        <option value="3 years">3 years</option>
                      </select>
+                     <p class="text-danger" id="is-valid17"></p>
                   </div>
                   <div class="col-md-3 mb-3">
                      <label for="validationDefault04">Initial Payment</label>
@@ -221,6 +243,7 @@
                         </div>
                         <input type="text" class="form-control" id="initPay" name="initPay">
                      </div>
+                     <p class="text-danger" id="is-valid18"></p>
                   </div>
                   <div class="col-md-3 mb-3">
                      <label for="validationDefault04">Balance Payment</label>
@@ -228,8 +251,9 @@
                         <div class="input-group-prepend">
                            <div class="input-group-text">UGX</div>
                         </div>
-                        <input type="text" class="form-control" id="initPay" name="balPay">
+                        <input type="text" class="form-control" id="balPay" name="balPay">
                      </div>
+                     <p class="text-danger" id="is-valid19"></p>
                   </div>
                   <div class="col-md-3 mb-3">
                      <label for="validationDefault04">Monthly Payment</label>
@@ -237,7 +261,8 @@
                         <div class="input-group-prepend">
                            <div class="input-group-text">UGX</div>
                         </div>
-                        <input type="text" class="form-control" id="initPay" name="monthlyPay">
+                        <input type="text" class="form-control" id="monthlyPay" name="monthlyPay">
+                        <p class="text-danger" id="is-valid20"></p>
                      </div>
                   </div>
                </div>
@@ -248,12 +273,14 @@
                         <label for="validationDefault03">Customer ID</label>
                         <input type="text" class="form-control" id="validationDefault03" name="customerID"
                            placeholder="enter serial number">
+                        <p class="text-danger" id="is-valid19"></p>
                      </div>
 
                      <div class="col-md-3 mb-3">
                         <label for="validationDefault03">Referee</label>
                         <input type="text" class="form-control" id="validationDefault03" name="refName"
                            placeholder="enter referee's name">
+                        <p class="text-danger" id="is-valid20"></p>
                      </div>
                      <div class="col-md-3 mb-3">
                         <label for="validationDefault04">Referee Phone Number</label>
@@ -263,6 +290,7 @@
                            </div>
                            <input type="text" class="form-control" id="inlineFormInputGroup" name="refNum"
                               placeholder="XXX-XXXXXX">
+                           <p class="text-danger" id="is-valid21"></p>
                         </div>
                      </div>
                   </div>

@@ -50,7 +50,7 @@ router.get('/edit/:customerId', (req, res) => {
    Customer.findById(req.params.customerId, (err, customer) => {
       if (err) return res.status(500).send('fake')
       if (customer) {
-         return res.status(200).render('custEdit', { title: 'Customer Edit', customerEdit: customer })
+         return res.status(200).render('customerEdit', { title: 'Customer Edit', customerEdit: customer })
       }
    })
 })

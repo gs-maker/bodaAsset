@@ -1,0 +1,222 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Customer Registration
+    link(rel="stylesheet" href="/static/customerReg.css")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+  body
+    nav.navbar.navbar-expand-lg.py-3.navbar-dark.bg-dark.fixed-top.shadow-sm
+      .container
+        a.navbar-brand(href="#")
+          // Logo Image
+          img.d-inline-block.align-middle.mr-2(src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="")
+          // Logo Text
+          span.text-uppercase.font-weight-bold Boda Banja
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item.active
+              a.nav-link(href="#")
+                | Home 
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href="#")  Registration
+            li.nav-item
+              a.nav-link(href="#") Sales Tools
+            li.nav-item
+              a.nav-link(href="#") Logout
+    br
+    // end of navigation
+    .container(style="padding-top:100px")
+      h1 #{title}
+      p Fill in all the details to create an account.
+      form#customerForm(action="/customer/registration" method="POST" onsubmit="return validateForm()" name="customerForm")
+    .container
+      fieldset.col-md-12
+        legend.col-md-4 Personal Information
+        .panel.panel-default
+          .panel-body
+            .form-row
+              .col-md-4.mb-3
+                label(for="validationDefault01") First name
+                input#firstName.form-control(type="text" placeholder="${firstName}" name="firstName")
+                p#is-valid1.text-danger
+              .col-md-4.mb-3
+                label(for="validationDefault02") Last name
+                input#validationDefault02.form-control(type="text" placeholder="${lastName}" name="lastName")
+                p#is-valid2.text-danger
+              .col-md-4.mb-3
+                label(for="validationDefaultUsername") ID Number
+                input#validationDefaultUsername.form-control(type="text" placeholder="${idNum}" aria-describedby="inputGroupPrepend2" name="idNum")
+                p#is-valid3.text-danger
+          .form-row
+            .form-group.col-md-4
+              label(for="inputCity") Place of Residence
+              input#homeAddress.form-control(type="text" name="homeAddress" placeholder="${homeAddress}")
+              p#is-valid4.text-danger
+            .form-group.col-md-4
+              label(for="inputState") Division
+              select#inputState.form-control(type="text" name="resDivision")
+                option(value="default" selected="") Choose...
+                option(value="Nakawa Division") Nakawa Division
+                option(value="Rubaga Division") Rubaga Division
+                option(value="Kawempe Division") Kawempe Division
+              p#is-valid5.text-danger
+            .form-group.col-md-4
+              label(for="inputZip") Parish
+              select#parish.form-control(type="text" name="parish")
+                option(value="default" selected="") Choose...
+                option(value="Mulimira Zone") Mulimira Zone
+                option(value="St. Agnes Zone") St. Agnes Zone
+                option(value="Sebbowa Zone") Sebbowa Zone
+              p#is-valid6.text-danger
+          .form-row
+            .col-md-4.mb-3
+              label(for="validationDefault03") Email Address
+              input#validationDefault03.form-control(type="email" placeholder="email address" name="emAddress")
+              p#is-valid7.text-danger
+            .col-md-4.mb-3
+              label(for="validationDefault04") Phone Number
+              .input-group.mb-3
+                .input-group-prepend
+                  .input-group-text +256
+                input#inlineFormInputGroup.form-control(type="text" placeholder="XXX-XXXXXX" name="phone")
+              p#is-valid8.text-danger
+            .col-md-4.mb-3
+              label(for="validationDefault05") Date of birth
+              input#validationDefault05.form-control(type="date" placeholder="${dob}" name="dob")
+              p#is-valid9.text-danger
+    br
+    // asset information
+    .container
+      fieldset.col-md-12
+        legend.col-md-4 Asset Information
+        .panel.panel-default
+          .form-row
+            .col-md-3.mb-3
+              label(for="validationDefault01") Vehicle type
+              select#vehicle.form-control(type="text" name="vehicle")
+                option(value="default" selected="") Choose...
+                option(value="Motorcycle") Motorcycle
+                option(value="TukTuk") Tuktuk
+              p#is-valid10.text-danger
+            .form-group.col-md-3
+              label(for="inputState") Stage name
+              select#inputState.form-control(name="stageName")
+                option(value="default" selected="") Choose...
+                option(value="Kira Road Stage B") Kira Road Stage B
+                option(value="Kobile Kamwokya Stage") Kobil Kamwokya Stage
+                option(value="Kasasiro Stage") Kasasiro Stage
+              p#is-valid11.text-danger
+            .form-group.col-md-3
+              label(for="inputZip") Division
+              select#parish.form-control(type="text" name="workDivision")
+                option(value="default" selected="") Choose...
+                option(value="Nakawa Division") Nakawa Division
+                option(value="Rubaga Division") Rubaga Division
+                option(value="Kawempe Division") Kawempe Division
+              p#is-valid12.text-danger
+            .form-group.col-md-3
+              label(for="inputCity") Stage Chairman
+              input#chairman.form-control(type="text" placeholder="${chairman}" name="chairman")
+            p#is-valid13.text-danger
+          .form-row
+            .col-md-3.mb-3
+              label(for="validationDefault03") Serial Number
+              input#validationDefault03.form-control(type="text" name="serialNum" placeholder="${serialNum}")
+              p#is-valid13.text-danger
+            .col-md-3.mb-3
+              label(for="validationDefault05") Registration date
+              input#validationDefault05.form-control(type="date" placeholder="DD/MM/YY" name="regDate")
+              p#is-valid14.text-danger
+            .form-group.col-md-3
+              label(for="inputZip") Vehicle Make
+              select#vmake.form-control(type="text" name="vmake")
+                option(value="default" selected="") Choose...
+                option(value="Mahindra") Mahindra
+                option(value="Hero") Hero
+                option(value="Bajaj") Bajaj
+                option(value="Honda") Honda
+              p#is-valid15.text-danger
+            .form-group.col-md-3
+              label(for="inputZip") Business Type
+              select#business.form-control(type="text" name="business")
+                option(value="default" selected="") Choose...
+                option(value="BodaBoda") BodaBoda
+                option(value="Delivery Vehicle") Delivery Vehicle
+                option(value="Passenger Vehicle") Passenger Vehicle
+              p#is-valid16.text-danger
+    br
+    // payement details
+    .container
+      fieldset.col-md-12
+        legend.col-md-4 Payment Details
+        .panel.panel-default
+          .panel-body
+            .form-row
+              .col-md-3.mb-3
+                label(for="validationDefault02") Payment Period
+                select#validationDefault02.form-control(type="text" name="period")
+                  option(value="default" selected="") Choose...
+                  option(value="1 year")  1 year
+                  option(value="2 years") 2 years
+                  option(value="3 years") 3 years
+                p#is-valid17.text-danger
+              .col-md-3.mb-3
+                label(for="validationDefault04") Initial Payment
+                .input-group.mb-3
+                  .input-group-prepend
+                    .input-group-text UGX
+                  input#initPay.form-control(type="text" name="initPay")
+                p#is-valid18.text-danger
+              .col-md-3.mb-3
+                label(for="validationDefault04") Balance Payment
+                .input-group.mb-3
+                  .input-group-prepend
+                    .input-group-text UGX
+                  input#balPay.form-control(type="text" name="balPay")
+                p#is-valid19.text-danger
+              .col-md-3.mb-3
+                label(for="validationDefault04") Monthly Payment
+                .input-group.mb-3
+                  .input-group-prepend
+                    .input-group-text UGX
+                  input#monthlyPay.form-control(type="text" name="monthlyPay")
+                  p#is-valid20.text-danger
+            .panel-body
+              .form-row
+                .col-md-6.mb-3
+                  label(for="validationDefault03") Customer ID
+                  input#validationDefault03.form-control(type="text" name="customerID" placeholder="${customerID}")
+                  p#is-valid19.text-danger
+                .col-md-3.mb-3
+                  label(for="validationDefault03") Referee
+                  input#validationDefault03.form-control(type="text" name="refName" placeholder="${refName}")
+                  p#is-valid20.text-danger
+                .col-md-3.mb-3
+                  label(for="validationDefault04") Referee Phone Number
+                  .input-group.mb-3
+                    .input-group-prepend
+                      .input-group-text +256
+                    input#inlineFormInputGroup.form-control(type="text" name="refNum" placeholder="${refNum}")
+                    p#is-valid21.text-danger
+      br
+      .row(style="display:flex")
+        .col-lg-12
+          button.btn.btn-primary.col-md-2.float-right(type="submit" style="margin-left:5px") Register
+          button.btn.btn-dark.col-md-2.float-right(type="reset") Reset
+    br
+    // footer starts here
+    #footer
+      .container
+        hr
+        |          © Copyright 2020, A Gerald Ssali Holdings Company
+        p
+    script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
+    script(src="/static/customerReg.js")
+

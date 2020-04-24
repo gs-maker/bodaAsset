@@ -7,6 +7,7 @@ server.use('/static', express.static(path.join(__dirname, 'public')))
 
 // mongodb connection
 const mongoose = require('mongoose')
+mongoose.set("useFindAndModify", false)
 mongoose.connect('mongodb://localhost:27017/bodaAsset',
    { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
       if (err) throw error;
