@@ -26,6 +26,7 @@ router.post('/registration', async (req, res) => {
 router.get('/bodas', async (req, res) => {
    try {
       const allCustomers = await Customer.find()
+      // res.sendFile(path.join(__dirname, '../views', 'customerList.html'))
       res.render('customerList', { allCustomers: allCustomers })
    } catch (error) {
       console.log(error)
@@ -48,15 +49,15 @@ router.post('/delete/:customerId', async (req, res) => {
 // customer edit from entry form
 router.get('/edit/:customerId', (req, res) => {
    Customer.findById(req.params.customerId, (err, customer) => {
-      if (err) return res.status(500).send('fake')
+      if (err) return res.status(500).send('unknown request')
       if (customer) {
-         return res.status(200).render('customerEdit', { title: 'Customer Edit', customerEdit: customer })
+         return res.status(200).render('customerEdit', { title: 'Edit Customer Details', customerEdit: customer })
+      } else {
+         customerEdit.save()
+         res.redirect('/customer/bodas')
       }
    })
 })
-
-
-// edited customer route save to database
 
 
 // customer route model export

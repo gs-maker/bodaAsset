@@ -42,25 +42,25 @@ html(lang="en")
             .form-row
               .col-md-4.mb-3
                 label(for="validationDefault01") First name
-                input#firstName.form-control(type="text" placeholder="${firstName}" name="firstName")
+                input#firstName.form-control(type="text" placeholder = `${customerEdit.firstName}`,value = `${customerEdit.firstName}` name="firstName")
                 p#is-valid1.text-danger
               .col-md-4.mb-3
                 label(for="validationDefault02") Last name
-                input#validationDefault02.form-control(type="text" placeholder="${lastName}" name="lastName")
+                input#validationDefault02.form-control(type="text" placeholder = `${customerEdit.lastName}`,value = `${customerEdit.lastName}` name="lastName")
                 p#is-valid2.text-danger
               .col-md-4.mb-3
                 label(for="validationDefaultUsername") ID Number
-                input#validationDefaultUsername.form-control(type="text" placeholder="${idNum}" aria-describedby="inputGroupPrepend2" name="idNum")
+                input#validationDefaultUsername.form-control(type="text" placeholder = `${customerEdit.idNum}`,value = `${customerEdit.idNum}` aria-describedby="inputGroupPrepend2" name="idNum")
                 p#is-valid3.text-danger
           .form-row
             .form-group.col-md-4
               label(for="inputCity") Place of Residence
-              input#homeAddress.form-control(type="text" name="homeAddress" placeholder="${homeAddress}")
+              input#homeAddress.form-control(type="text" name="homeAddress" placeholder = `${customerEdit.homeAddress}`,value = `${customerEdit.homeAddress}`)
               p#is-valid4.text-danger
             .form-group.col-md-4
               label(for="inputState") Division
               select#inputState.form-control(type="text" name="resDivision")
-                option(value="default" selected="") Choose...
+                option(selected='' value='default') #{customerEdit.resDivision}
                 option(value="Nakawa Division") Nakawa Division
                 option(value="Rubaga Division") Rubaga Division
                 option(value="Kawempe Division") Kawempe Division
@@ -68,7 +68,7 @@ html(lang="en")
             .form-group.col-md-4
               label(for="inputZip") Parish
               select#parish.form-control(type="text" name="parish")
-                option(value="default" selected="") Choose...
+                option(selected='' value='default') #{customerEdit.parish}
                 option(value="Mulimira Zone") Mulimira Zone
                 option(value="St. Agnes Zone") St. Agnes Zone
                 option(value="Sebbowa Zone") Sebbowa Zone
@@ -76,18 +76,18 @@ html(lang="en")
           .form-row
             .col-md-4.mb-3
               label(for="validationDefault03") Email Address
-              input#validationDefault03.form-control(type="email" placeholder="email address" name="emAddress")
+              input#validationDefault03.form-control(type="email" placeholder=`${customerEdit.emAddress}`,value = `${customerEdit.emAddress}` name="emAddress")
               p#is-valid7.text-danger
             .col-md-4.mb-3
               label(for="validationDefault04") Phone Number
               .input-group.mb-3
                 .input-group-prepend
                   .input-group-text +256
-                input#inlineFormInputGroup.form-control(type="text" placeholder="XXX-XXXXXX" name="phone")
+                input#inlineFormInputGroup.form-control(type="text" placeholder=`${customerEdit.phone}`,value = `${customerEdit.phone}` name="phone")
               p#is-valid8.text-danger
             .col-md-4.mb-3
               label(for="validationDefault05") Date of birth
-              input#validationDefault05.form-control(type="date" placeholder="${dob}" name="dob")
+              input#validationDefault05.form-control(type="date" placeholder=`${customerEdit.dob}`,value = `${customerEdit.dob}` name="dob")
               p#is-valid9.text-danger
     br
     // asset information
@@ -99,14 +99,14 @@ html(lang="en")
             .col-md-3.mb-3
               label(for="validationDefault01") Vehicle type
               select#vehicle.form-control(type="text" name="vehicle")
-                option(value="default" selected="") Choose...
+                option(selected='' value='default') #{customerEdit.vehicle}
                 option(value="Motorcycle") Motorcycle
                 option(value="TukTuk") Tuktuk
               p#is-valid10.text-danger
             .form-group.col-md-3
               label(for="inputState") Stage name
               select#inputState.form-control(name="stageName")
-                option(value="default" selected="") Choose...
+                option(selected='' value='default') #{customerEdit.stageName}
                 option(value="Kira Road Stage B") Kira Road Stage B
                 option(value="Kobile Kamwokya Stage") Kobil Kamwokya Stage
                 option(value="Kasasiro Stage") Kasasiro Stage
@@ -114,19 +114,19 @@ html(lang="en")
             .form-group.col-md-3
               label(for="inputZip") Division
               select#parish.form-control(type="text" name="workDivision")
-                option(value="default" selected="") Choose...
+                option(selected='' value='default') #{customerEdit.workDivision}
                 option(value="Nakawa Division") Nakawa Division
                 option(value="Rubaga Division") Rubaga Division
                 option(value="Kawempe Division") Kawempe Division
               p#is-valid12.text-danger
             .form-group.col-md-3
               label(for="inputCity") Stage Chairman
-              input#chairman.form-control(type="text" placeholder="${chairman}" name="chairman")
+              input#chairman.form-control(type="text" placeholder=`${customerEdit.chairman}`,value = `${customerEdit.chairman}` name="chairman")
             p#is-valid13.text-danger
           .form-row
             .col-md-3.mb-3
               label(for="validationDefault03") Serial Number
-              input#validationDefault03.form-control(type="text" name="serialNum" placeholder="${serialNum}")
+              input#validationDefault03.form-control(type="text" name="serialNum" placeholder=`${customerEdit.serialNum}`,value = `${customerEdit.serialNum}` )
               p#is-valid13.text-danger
             .col-md-3.mb-3
               label(for="validationDefault05") Registration date
@@ -135,7 +135,7 @@ html(lang="en")
             .form-group.col-md-3
               label(for="inputZip") Vehicle Make
               select#vmake.form-control(type="text" name="vmake")
-                option(value="default" selected="") Choose...
+                option(selected='' value='default') #{customerEdit.vmake}
                 option(value="Mahindra") Mahindra
                 option(value="Hero") Hero
                 option(value="Bajaj") Bajaj
@@ -144,7 +144,7 @@ html(lang="en")
             .form-group.col-md-3
               label(for="inputZip") Business Type
               select#business.form-control(type="text" name="business")
-                option(value="default" selected="") Choose...
+                option(selected='' value='default') #{customerEdit.business}
                 option(value="BodaBoda") BodaBoda
                 option(value="Delivery Vehicle") Delivery Vehicle
                 option(value="Passenger Vehicle") Passenger Vehicle
@@ -160,7 +160,7 @@ html(lang="en")
               .col-md-3.mb-3
                 label(for="validationDefault02") Payment Period
                 select#validationDefault02.form-control(type="text" name="period")
-                  option(value="default" selected="") Choose...
+                  option(selected='' value='default') #{customerEdit.period}
                   option(value="1 year")  1 year
                   option(value="2 years") 2 years
                   option(value="3 years") 3 years
@@ -170,45 +170,44 @@ html(lang="en")
                 .input-group.mb-3
                   .input-group-prepend
                     .input-group-text UGX
-                  input#initPay.form-control(type="text" name="initPay")
+                  input#initPay.form-control(type="text" placeholder=`${customerEdit.initPay}`,value = `${customerEdit.initPay}` name="initPay")
                 p#is-valid18.text-danger
               .col-md-3.mb-3
                 label(for="validationDefault04") Balance Payment
                 .input-group.mb-3
                   .input-group-prepend
                     .input-group-text UGX
-                  input#balPay.form-control(type="text" name="balPay")
+                  input#balPay.form-control(type="text" placeholder=`${customerEdit.balPay}`,value = `${customerEdit.balPay}` name="balPay")
                 p#is-valid19.text-danger
               .col-md-3.mb-3
                 label(for="validationDefault04") Monthly Payment
                 .input-group.mb-3
                   .input-group-prepend
                     .input-group-text UGX
-                  input#monthlyPay.form-control(type="text" name="monthlyPay")
+                  input#monthlyPay.form-control(type="text" placeholder=`${customerEdit.monthlyPay}`,value = `${customerEdit.monthlyPay}` name="monthlyPay")
                   p#is-valid20.text-danger
             .panel-body
               .form-row
                 .col-md-6.mb-3
                   label(for="validationDefault03") Customer ID
-                  input#validationDefault03.form-control(type="text" name="customerID" placeholder="${customerID}")
+                  input#validationDefault03.form-control(type="text" name="customerID" placeholder=`${customerEdit.customerID}`,value = `${customerEdit.customerID}`)
                   p#is-valid19.text-danger
                 .col-md-3.mb-3
                   label(for="validationDefault03") Referee
-                  input#validationDefault03.form-control(type="text" name="refName" placeholder="${refName}")
+                  input#validationDefault03.form-control(type="text" name="refName" placeholder=`${customerEdit.refName}`,value = `${customerEdit.refName}`)
                   p#is-valid20.text-danger
                 .col-md-3.mb-3
                   label(for="validationDefault04") Referee Phone Number
                   .input-group.mb-3
                     .input-group-prepend
                       .input-group-text +256
-                    input#inlineFormInputGroup.form-control(type="text" name="refNum" placeholder="${refNum}")
+                    input#inlineFormInputGroup.form-control(type="text" name="refNum" placeholder=`${customerEdit.refNum}`,value = `${customerEdit.refNum}`)
                     p#is-valid21.text-danger
       br
       .row(style="display:flex")
         .col-lg-12
-          button.btn.btn-primary.col-md-2.float-right(type="submit" style="margin-left:5px") Register
-          button.btn.btn-dark.col-md-2.float-right(type="reset") Reset
-    br
+          button.btn.btn-primary.col-md-2.float-right(type="submit" style="margin-left:5px") Save
+          //- button.btn.btn-dark.col-md-2.float-right(type="reset") Reset
     // footer starts here
     #footer
       .container

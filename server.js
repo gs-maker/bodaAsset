@@ -2,8 +2,11 @@
 const express = require('express')
 const server = express()
 const path = require('path')
+const passport = require('passport');
+const session = require('express-session')
 server.use('/static', express.static(path.join(__dirname, 'public')))
 
+const User = require('./models/userModel');
 
 // mongodb connection
 const mongoose = require('mongoose')
@@ -23,6 +26,18 @@ const bodyParser = require('body-parser')
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
 
+// passport
+server.use(passport.initialize());
+passport.use(User.createStrategy())
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
+
+// use sessions to track logins
+server.use(session({
+   secret: 'katogoNeChai`',
+   resave: false,
+   saveUninitialized: false
+}));
 
 // imported routes
 const customerRoute = require('./routes/customerRoute')

@@ -21,8 +21,9 @@ validateForm = () => {
 
    // // payment details
    var payDuration = document.forms["customerForm"]["period"];
-   // var currentIncome = documentforms["customerForm"]["curIncome"];
-   // var nKin = document.forms["customerForm"]["nextKin"];
+   var firstPay = document.forms["customerForm"]["initPay"];
+   var referName = document.forms["customerForm"]["refName"];
+   var referNumber = document.forms["customerForm"]["refNum"];
 
    // regular expressions
    // var letters = /^[A-Za-z]+$/;
@@ -48,7 +49,13 @@ validateForm = () => {
                                              if (Type(vehicleMake)) {
                                                 if (Business(bizType)) {
                                                    if (PaymentPlan(payDuration)) {
-                                                      return true
+                                                      if (FirstPayment(firstPay)) {
+                                                         if (Referee(referName)) {
+                                                            if (ReferTel(referNumber)) {
+                                                               return true
+                                                            }
+                                                         }
+                                                      }
                                                    }
                                                 }
                                              }
@@ -76,7 +83,7 @@ FirstName = (input) => {
       input.style.border = '1px solid green'
       return true
    } else {
-      document.getElementById('is-valid1').innerHTML = 'Your firstname must include alphabets only'
+      document.getElementById('is-valid1').innerHTML = 'First name must include letters only'
       input.style.border = '1px solid red'
       return false
    }
@@ -90,7 +97,7 @@ LastName = (input) => {
       input.style.border = '1px solid green'
       return true
    } else {
-      document.getElementById('is-valid2').innerHTML = 'Your last name must include alphabets only'
+      document.getElementById('is-valid2').innerHTML = 'Last name must include alphabets only'
       input.style.border = '1px solid red'
       input.focus();
       return false
@@ -314,5 +321,50 @@ PaymentPlan = (input) => {
       input.style.border = '1px solid green'
       input.focus()
       return true
+   }
+}
+
+// initial deposit
+FirstPayment = (input) => {
+   let numbers = /^[0-9]+$/
+   if (input.value.match(numbers)) {
+      document.getElementById('is-valid9').innerHTML = ''
+      input.style.border = '1px solid green'
+      return true
+   } else {
+      document.getElementById('is-valid9').innerHTML = 'Please fill in the initial deposit'
+      input.style.border = '1px solid red'
+      input.focus()
+      return false
+   }
+}
+
+// Referee Name
+Referee = (input) => {
+   let letters = /^[a-zA-Z '.-]*$/;
+   if (input.value.match(letters)) {
+      document.getElementById('is-valid20').innerHTML = ''
+      input.style.border = '1px solid green'
+      return true
+   } else {
+      document.getElementById('is-valid20').innerHTML = 'Please enter both names, no numbers'
+      input.style.border = '1px solid red'
+      return false
+   }
+}
+
+
+// referee' phone validation
+ReferTel = (input) => {
+   let numbers = /^[0-9]+$/
+   if (input.value.match(numbers)) {
+      document.getElementById('is-valid8').innerHTML = ''
+      input.style.border = '1px solid green'
+      return true
+   } else {
+      document.getElementById('is-valid8').innerHTML = 'Phone number has only numerals'
+      input.style.border = '1px solid red'
+      input.focus()
+      return false
    }
 }
