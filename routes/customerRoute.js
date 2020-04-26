@@ -3,8 +3,14 @@ const router = express.Router()
 const path = require('path')
 const Customer = require('../models/customerModel')
 
+// customer registration login route
+router.get('/login', (req, res) => {
+   res.sendFile(path.join(__dirname, '../views', 'login.html'))
+})
+
+
 // routes
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
    res.sendFile(path.join(__dirname, '../views', 'customerReg.html'))
 })
 
@@ -20,7 +26,6 @@ router.post('/registration', async (req, res) => {
       res.status(400, 'unable to save to database')
    }
 })
-
 
 // registered customers/boda list
 router.get('/bodas', async (req, res) => {

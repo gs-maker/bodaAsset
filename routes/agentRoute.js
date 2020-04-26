@@ -4,7 +4,8 @@ const path = require('path')
 const Agent = require('../models/agentModel')
 
 // routes
-router.get('/', (req, res) => {
+// agent registration route
+router.get('/agent', (req, res) => {
    res.sendFile(path.join(__dirname, '../views', 'agentReg.html'))
 })
 
