@@ -9,11 +9,6 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<style>
-   p {
-      font-size: 13px
-   }
-</style>
 
 <body>
    <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark fixed-top shadow-sm">
@@ -32,11 +27,9 @@
 
          <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-               <li class="nav-item"><a href="#" class="nav-link">Home</a>
+               <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
                </li>
-               <li class="nav-item active"><a href="#" class="nav-link"> Registration <span
-                        class="sr-only">(current)</span></a></li>
-               <li class="nav-item"><a href="/customer/bodas" class="nav-link">Customer List</a></li>
+               <li class="nav-item"><a href="#" class="nav-link"> Registration</a></li>
                <li class="nav-item"><a href="#" class="nav-link">Sales Tools</a></li>
                <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
             </ul>
@@ -48,7 +41,7 @@
    <!-- end of navigation -->
    <div class="container" style="padding-top:100px">
       <h1>Customer Registration Form</h1>
-      <p>Fill in all the details to register a customer.</p>
+      <p>Fill in all the details to create an account.</p>
       <form action="/customer/registration" method="POST" onsubmit="return validateForm()" id="customerForm"
          name="customerForm">
    </div>
@@ -62,20 +55,19 @@
                <div class="form-row">
                   <div class="col-md-4 mb-3">
                      <label for="validationDefault01">First name</label>
-                     <input type="text" class="form-control" placeholder="enter first name" value="" name="firstName"
-                        id="firstName">
+                     <input type="text" class="form-control" placeholder=${firstName} name="firstName" id="firstName">
                      <p class="text-danger" id="is-valid1"></p>
                   </div>
                   <div class="col-md-4 mb-3">
                      <label for="validationDefault02">Last name</label>
-                     <input type="text" class="form-control" id="validationDefault02" placeholder="enter last name"
-                        value="" name="lastName" id="lastName">
+                     <input type="text" class="form-control" id="validationDefault02" placeholder=${lastName}
+                        name="lastName" id="lastName">
                      <p class="text-danger" id="is-valid2"></p>
                   </div>
                   <div class="col-md-4 mb-3">
                      <label for="validationDefaultUsername">ID Number</label>
-                     <input type="text" class="form-control" id="validationDefaultUsername"
-                        placeholder="National ID  Number" aria-describedby="inputGroupPrepend2" name="idNum">
+                     <input type="text" class="form-control" id="validationDefaultUsername" placeholder=${idNum}
+                        aria-describedby="inputGroupPrepend2" name="idNum">
                      <p class="text-danger" id="is-valid3"></p>
                   </div>
                </div>
@@ -85,7 +77,7 @@
                <div class="form-group col-md-4">
                   <label for="inputCity">Place of Residence</label>
                   <input type="text" class="form-control" id="homeAddress" name="homeAddress"
-                     placeholder="21E, Mulimira Zone, Block 28B">
+                     placeholder=${homeAddress}>
                   <p class="text-danger" id="is-valid4"></p>
                </div>
                <div class="form-group col-md-4">
@@ -102,9 +94,9 @@
                   <label for="inputZip">Parish</label>
                   <select type="text" class="form-control" id="parish" name="parish">
                      <option value="default" selected>Choose...</option>
-                     <option value="Mulimira Parish">Mulimira Parish</option>
-                     <option value="St. Agnes Parish">St. Agnes Parish</option>
-                     <option value="Sebbowa Parish">Sebbowa Parish</option>
+                     <option value="Mulimira Zone">Mulimira Zone</option>
+                     <option value="St. Agnes Zone">St. Agnes Zone</option>
+                     <option value="Sebbowa Zone">Sebbowa Zone</option>
                   </select>
                   <p class="text-danger" id="is-valid6"></p>
                </div>
@@ -130,7 +122,7 @@
                </div>
                <div class="col-md-4 mb-3">
                   <label for="validationDefault05">Date of birth</label>
-                  <input type="date" class="form-control" id="validationDefault05" placeholder="YY/MM/DD" name="dob"
+                  <input type="date" class="form-control" id="validationDefault05" placeholder=${dob} name="dob"
                      id="dob">
                   <p class="text-danger" id="is-valid9"></p>
                </div>
@@ -153,7 +145,6 @@
                      <option value="default" selected>Choose...</option>
                      <option value="Motorcycle">Motorcycle</option>
                      <option value="TukTuk">Tuktuk</option>
-                     <option value="TukTuk">Tri-Cycle</option>
                   </select>
                   <p class="text-danger" id="is-valid10"></p>
                </div>
@@ -179,7 +170,7 @@
                </div>
                <div class="form-group col-md-3">
                   <label for="inputCity">Stage Chairman</label>
-                  <input type="text" class="form-control" id="chairman" name="chairman">
+                  <input type="text" class="form-control" id="chairman" placeholder=${chairman} name="chairman">
                </div>
                <p class="text-danger" id="is-valid13"></p>
             </div>
@@ -188,7 +179,7 @@
                <div class="col-md-3 mb-3">
                   <label for="validationDefault03">Serial Number</label>
                   <input type="text" class="form-control" id="validationDefault03" name="serialNum"
-                     placeholder="Chasis/VIN">
+                     placeholder=${serialNum}>
                   <p class="text-danger" id="is-valid13"></p>
                </div>
                <div class="col-md-3 mb-3">
@@ -237,10 +228,9 @@
                      <label for="validationDefault02">Payment Period</label>
                      <select type="text" class="form-control" id="validationDefault02" name="period">
                         <option value="default" selected>Choose...</option>
-                        <option value="6 months"> 6 months</option>
-                        <option value="12 months">12 months</option>
-                        <option value="18 months">18 months</option>
-                        <option value="24 months">24 months</option>
+                        <option value="1 year"> 1 year</option>
+                        <option value="2 years">2 years</option>
+                        <option value="3 years">3 years</option>
                      </select>
                      <p class="text-danger" id="is-valid17"></p>
                   </div>
@@ -280,15 +270,15 @@
                   <div class="form-row">
                      <div class="col-md-6 mb-3">
                         <label for="validationDefault03">Customer ID</label>
-                        <input type="text" class="form-control" id="customerID" name="customerID"
-                           placeholder="enter serial number">
+                        <input type="text" class="form-control" id="validationDefault03" name="customerID"
+                           placeholder=${customerID}>
                         <p class="text-danger" id="is-valid19"></p>
                      </div>
 
                      <div class="col-md-3 mb-3">
                         <label for="validationDefault03">Referee</label>
                         <input type="text" class="form-control" id="validationDefault03" name="refName"
-                           placeholder="enter referee's name">
+                           placeholder=${refName}>
                         <p class="text-danger" id="is-valid20"></p>
                      </div>
                      <div class="col-md-3 mb-3">
@@ -298,7 +288,7 @@
                               <div class="input-group-text">+256</div>
                            </div>
                            <input type="text" class="form-control" id="inlineFormInputGroup" name="refNum"
-                              placeholder="XXX-XXXXXX">
+                              placeholder="${refNum}">
                            <p class="text-danger" id="is-valid21"></p>
                         </div>
                      </div>
@@ -317,6 +307,7 @@
       </div>
       </form>
    </div>
+   <br>
 
    <!-- footer starts here -->
    <div id="footer">
@@ -336,7 +327,7 @@
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"></script>
-   <script src="/static/customerValidate.js"></script>
+   <script src="/static/customerReg.js"></script>
 </body>
 
 </html>
