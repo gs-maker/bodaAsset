@@ -368,3 +368,7 @@ ReferTel = (input) => {
       return false
    }
 }
+
+// Other functions
+// var custID = document.getElementById("customerID")
+// function customerIdentity()

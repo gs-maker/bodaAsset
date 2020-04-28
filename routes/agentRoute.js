@@ -5,7 +5,7 @@ const Agent = require('../models/agentModel')
 
 // routes
 // agent registration route
-router.get('/agent', (req, res) => {
+router.get('/', (req, res) => {
    res.sendFile(path.join(__dirname, '../views', 'agentReg.html'))
 })
 
@@ -14,13 +14,23 @@ router.post('/registration', async (req, res) => {
    try {
       const agent = new Agent(req.body)
       await agent.save()
+      res.redirect('/agent/employees')
    } catch (error) {
       console.log(error)
       res.status(400, 'unable to save to database')
    }
 })
 
-// edit/update agent entry and information
+// registered employees list
+router.get('/employees', async (req, res) => {
+   try {
+      const employees = await Agent.find()
+      res.render('employeeList', { allAgents: employees })
+   } catch (error) {
+      console.log(error)
+      res.status(400, 'unable to find employee')
+   }
+})
 
 
 // agent route model export

@@ -1,0 +1,67 @@
+doctype html
+html(lang="en")
+   head
+      meta(charset="UTF-8")
+      meta(name="viewport" content="width=device-width, initial-scale=1.0")
+      title Document
+      link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+   body
+      .container-fluid
+      nav.navbar.navbar-expand-lg.py-3.navbar-dark.bg-dark.fixed-top.shadow-sm
+         a.navbar-brand(href="#")
+         img.d-inline-block.align-middle.mr-2(src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="")
+         span.text-uppercase.font-weight-bold Boda Banja
+         #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto
+               li.nav-item.active
+                  a.nav-link(href="#")
+                     | Customers 
+                  span.sr-only (current)
+               li.nav-item
+                  a.nav-link(href="#")  Registration
+               li.nav-item
+                  a.nav-link(href="#") Sales Tools
+         form.form-inline
+            input.form-control.mr-sm-2(type="search" placeholder="Search" aria-label="Search")
+            button.btn.btn-outline-success.my-2.my-sm-0(type="submit") Search
+   // table
+   .container-fluid
+      h1(style="margin-top:100px") Registered customers list
+      table.table.table-hover
+         thead.thead-dark
+            tr
+               th(scope="col") #
+               th(scope="col") First Name
+               th(scope="col") Last Name
+               th(scope="col") Phone Number
+               th(scope="col") Residence
+               th(scope="col") Employee Number
+               th(scope="col") Work Station
+               th(scope="col") Supervisor
+               th(scope="col") Employement Status
+               th(scope="col") Actions
+         tbody
+            each agent in allAgents
+               tr
+                  th(scope="row") 1
+                  td #{agent.firstName}
+                  td #{agent.lastName}
+                  td #{agent.phone}
+                  td #{agent.homeAddress}
+                  td #{agent.stageName}
+                  td #{agent.initPay}
+                  td #{agent.balPay}
+                  td #{agent.period}
+                  td(colspan="2")
+                     form(method="post" action=`/customer/delete/${agent._id}`)
+                           input(type="hidden", placeholder="", name="id", value=agent._id)
+                           button.btn.btn-dark.btn-block(type="submit") Delete
+                  td(colspan="2")
+                     form(method="get" action=`/customer/edit/${agent._id}`)
+                           input(type="hidden", placeholder="", name="id", value=agent._id)
+                           button.btn.btn-dark.btn-block(type="submit") Update
+      // footer starts here
+      #footer
+         hr
+         |          © Copyright 2020, A Gerald Ssali Holdings Company
+         p

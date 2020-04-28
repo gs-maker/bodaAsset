@@ -10,20 +10,11 @@ agentValidate = () => {
    var pnumber = document.forms["agentForm"]["phone"];
    var dob = document.forms["agentForm"]["dob"];
 
-   // // asset Information
-   // var vType = document.forms["agentForm"]["vehicle"];
-   // var stage = document.forms["agentForm"]["stageName"];
-   // var wDivision = document.forms["agentForm"]["workDivision"];
-   // var stageChair = document.forms["agentForm"]["chairman"];
-   // var serial = document.forms["agentForm"]["serialNum"];
-   // var vehicleMake = document.forms["agentForm"]["vmake"];
-   // var bizType = document.forms["agentForm"]["business"];
-
-   // // // payment details
-   // var payDuration = document.forms["agentForm"]["period"];
-   // var firstPay = document.forms["agentForm"]["initPay"];
-   // var referName = document.forms["agentForm"]["refName"];
-   // var referNumber = document.forms["agentForm"]["refNum"];
+   // employee Information
+   var employment = document.forms["agentForm"]["emStatus"];
+   var role = document.forms["agentForm"]["role"];
+   var reportAuth = document.forms["agentForm"]["supervisor"];
+   var work = document.forms["agentForm"]["workStation"];
 
    // regular expressions
    // var letters = /^[A-Za-z]+$/;
@@ -41,7 +32,15 @@ agentValidate = () => {
                      if (PhoneNumber(pnumber)) {
                         if (Parish(parish)) {
                            if (Dob(dob)) {
-                              return true
+                              if (EmpStatus(employment)) {
+                                 if (AsRole(role)) {
+                                    if (Supervisor(reportAuth)) {
+                                       if (WorkBase(work)) {
+                                          return true
+                                       }
+                                    }
+                                 }
+                              }
                            }
                         }
                      }
@@ -187,111 +186,12 @@ Dob = (input) => {
    }
 }
 
-// all asset information fields validation
-// vehicle type
-VehicleType = (input) => {
-   if (input.value === 'default') {
-      document.getElementById('is-valid10').innerHTML = 'Please select a vehicle type'
-      input.style.border = '1px solid red'
-      return false
-   } else {
-      document.getElementById('is-valid10').innerHTML = ''
-      input.style.border = '1px solid green'
-      input.focus()
-      return true
-   }
-}
 
-// // chairman
-StageName = (input) => {
-   if (input.value === 'default') {
-      document.getElementById('is-valid11').innerHTML = 'Please select a stage name from the list'
-      input.style.border = '1px solid red'
-      return false
-   } else {
-      document.getElementById('is-valid11').innerHTML = ''
-      input.style.border = '1px solid green'
-      input.focus()
-      return true
-   }
-}
-
-// // work place
-WorkDivision = (input) => {
-   if (input.value === 'default') {
-      document.getElementById('is-valid12').innerHTML = 'Please select from the listed divisions'
-      input.style.border = '1px solid red'
-      return false
-   } else {
-      document.getElementById('is-valid12').innerHTML = ''
-      input.style.border = '1px solid green'
-      input.focus()
-      return true
-   }
-}
-
-// stage chairman
-Chairman = (input) => {
-   let letters = /^[a-zA-Z '.-]*$/;
-   if (input.value.match(letters)) {
-      document.getElementById('is-valid13').innerHTML = ''
-      input.style.border = '1px solid green'
-      return true
-   } else {
-      document.getElementById('is-valid13').innerHTML = 'Please enter both names, no numbers'
-      input.style.border = '1px solid red'
-      return false
-   }
-}
-
-// serial number
-SerialNum = (input) => {
-   let letters = /^[a-zA-Z0-9]+$/;
-   if (input.value.match(letters)) {
-      document.getElementById('is-valid3').innerHTML = ''
-      input.style.border = '1px solid green'
-      return true
-   } else {
-      document.getElementById('is-valid3').innerHTML = 'Please refer to vehicle for Serial Number'
-      input.style.border = '1px solid red'
-      input.focus()
-      return false
-   }
-}
-
-// vehicle make
-Type = (input) => {
-   if (input.value === 'default') {
-      document.getElementById('is-valid15').innerHTML = 'Please select the vehicle manufacturer'
-      input.style.border = '1px solid red'
-      return false
-   } else {
-      document.getElementById('is-valid15').innerHTML = ''
-      input.style.border = '1px solid green'
-      input.focus()
-      return true
-   }
-}
-
-// business type
-Business = (input) => {
-   if (input.value === 'default') {
-      document.getElementById('is-valid16').innerHTML = 'Please select a business category'
-      input.style.border = '1px solid red'
-      return false
-   } else {
-      document.getElementById('is-valid16').innerHTML = ''
-      input.style.border = '1px solid green'
-      input.focus()
-      return true
-   }
-}
-
-// all payment details validation
+// Employement details validation
 // payment duration
-PaymentPlan = (input) => {
+EmpStatus = (input) => {
    if (input.value === 'default') {
-      document.getElementById('is-valid17').innerHTML = 'Please select a payment'
+      document.getElementById('is-valid17').innerHTML = 'Please select the type of contract'
       input.style.border = '1px solid red'
       return false
    } else {
@@ -302,47 +202,61 @@ PaymentPlan = (input) => {
    }
 }
 
-// initial deposit
-FirstPayment = (input) => {
-   let numbers = /^[0-9]+$/
-   if (input.value.match(numbers)) {
-      document.getElementById('is-valid9').innerHTML = ''
-      input.style.border = '1px solid green'
-      return true
-   } else {
-      document.getElementById('is-valid9').innerHTML = 'Please fill in the initial deposit'
+// Assigned Role
+AsRole = (input) => {
+   if (input.value === 'default') {
+      document.getElementById('is-valid17').innerHTML = 'Please select the type of contract'
       input.style.border = '1px solid red'
+      return false
+   } else {
+      document.getElementById('is-valid17').innerHTML = ''
+      input.style.border = '1px solid green'
       input.focus()
-      return false
-   }
-}
-
-// Referee Name
-Referee = (input) => {
-   let letters = /^[a-zA-Z '.-]*$/;
-   if (input.value.match(letters)) {
-      document.getElementById('is-valid20').innerHTML = ''
-      input.style.border = '1px solid green'
       return true
-   } else {
-      document.getElementById('is-valid20').innerHTML = 'Please enter both names, no numbers'
-      input.style.border = '1px solid red'
-      return false
    }
 }
 
 
-// referee' phone validation
-ReferTel = (input) => {
-   let numbers = /^[0-9]+$/
-   if (input.value.match(numbers)) {
-      document.getElementById('is-valid8').innerHTML = ''
-      input.style.border = '1px solid green'
-      return true
-   } else {
-      document.getElementById('is-valid8').innerHTML = 'Phone number has only numerals'
+// Assigned Role
+Supervisor = (input) => {
+   if (input.value === 'default') {
+      document.getElementById('is-valid17').innerHTML = 'Please select the type of contract'
       input.style.border = '1px solid red'
-      input.focus()
       return false
+   } else {
+      document.getElementById('is-valid17').innerHTML = ''
+      input.style.border = '1px solid green'
+      input.focus()
+      return true
+   }
+}
+
+
+// Reporting Authority
+AsRole = (input) => {
+   if (input.value === 'default') {
+      document.getElementById('is-valid17').innerHTML = 'Please select the type of contract'
+      input.style.border = '1px solid red'
+      return false
+   } else {
+      document.getElementById('is-valid17').innerHTML = ''
+      input.style.border = '1px solid green'
+      input.focus()
+      return true
+   }
+}
+
+
+// Workstation
+WorkBase = (input) => {
+   if (input.value === 'default') {
+      document.getElementById('is-valid17').innerHTML = 'Please select the type of contract'
+      input.style.border = '1px solid red'
+      return false
+   } else {
+      document.getElementById('is-valid17').innerHTML = ''
+      input.style.border = '1px solid green'
+      input.focus()
+      return true
    }
 }

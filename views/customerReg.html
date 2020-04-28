@@ -36,7 +36,7 @@
                </li>
                <li class="nav-item active"><a href="#" class="nav-link"> Registration <span
                         class="sr-only">(current)</span></a></li>
-               <li class="nav-item"><a href="/views/customerList.html" class="nav-link">Customer List</a></li>
+               <li class="nav-item"><a href="/customer/bodas" class="nav-link">Customer List</a></li>
                <li class="nav-item"><a href="#" class="nav-link">Sales Tools</a></li>
                <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
             </ul>
@@ -130,7 +130,7 @@
                </div>
                <div class="col-md-4 mb-3">
                   <label for="validationDefault05">Date of birth</label>
-                  <input type="date" class="form-control" id="validationDefault05" placeholder="DD/MM/YY" name="dob"
+                  <input type="date" class="form-control" id="validationDefault05" placeholder="YY/MM/DD" name="dob"
                      id="dob">
                   <p class="text-danger" id="is-valid9"></p>
                </div>
@@ -153,6 +153,7 @@
                      <option value="default" selected>Choose...</option>
                      <option value="Motorcycle">Motorcycle</option>
                      <option value="TukTuk">Tuktuk</option>
+                     <option value="TukTuk">Tri-Cycle</option>
                   </select>
                   <p class="text-danger" id="is-valid10"></p>
                </div>
@@ -236,9 +237,10 @@
                      <label for="validationDefault02">Payment Period</label>
                      <select type="text" class="form-control" id="validationDefault02" name="period">
                         <option value="default" selected>Choose...</option>
-                        <option value="1 year"> 1 year</option>
-                        <option value="2 years">2 years</option>
-                        <option value="3 years">3 years</option>
+                        <option value="6 months"> 6 months</option>
+                        <option value="12 months">12 months</option>
+                        <option value="18 months">18 months</option>
+                        <option value="24 months">24 months</option>
                      </select>
                      <p class="text-danger" id="is-valid17"></p>
                   </div>
@@ -278,7 +280,7 @@
                   <div class="form-row">
                      <div class="col-md-6 mb-3">
                         <label for="validationDefault03">Customer ID</label>
-                        <input type="text" class="form-control" id="validationDefault03" name="customerID"
+                        <input type="text" class="form-control" id="customerID" name="customerID"
                            placeholder="enter serial number">
                         <p class="text-danger" id="is-valid19"></p>
                      </div>

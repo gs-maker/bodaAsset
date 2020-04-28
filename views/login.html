@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Boda Asset Login</title>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
@@ -15,7 +15,7 @@
    }
 
    .bg-image {
-      background-image: url('https://res.cloudinary.com/mhmd/image/upload/v1555917661/art-colorful-contemporary-2047905_dxtao7.jpg');
+      background-image: url('/static/images/BAJAJ-Boxer.jpg');
       background-size: cover;
       background-position: center center;
    }
@@ -36,16 +36,17 @@
                <div class="container">
                   <div class="row">
                      <div class="col-lg-10 col-xl-7 mx-auto">
-                        <img class="float-right" src="/public/images/logo_boda.png" alt="">
+                        <img class="float-right" src="/static/images/logo_boda.png" style="width:60px" alt="">
                         <h3 class="display-4" style="margin-top:150px">Log into your account</h3>
-                        <p class="text-muted mb-4">We always strive to make a meaningful connections with our clients. Make your impact today.</p>
+                        <p class="text-muted mb-4">We always strive to make a meaningful connections with our clients.
+                           Make your impact today.</p>
                         <br>
 
-                        <form action="/customer" method="post" onsubmit="return validateLog()" id="loginForm"
+                        <form action="/customer" method="GET" onsubmit="return validateLog()" id="loginForm"
                            name="loginForm">
                            <div class="form-group mb-3">
-                              <input id="inputEmail" type="text" placeholder="Username" required=""
-                                 autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                              <input id="inputEmail" type="text" placeholder="Username" required="" autofocus=""
+                                 class="form-control rounded-pill border-0 shadow-sm px-4">
                            </div>
                            <div class="form-group mb-3">
                               <input id="inputPassword" type="password" placeholder="Password" required=""
@@ -63,10 +64,7 @@
                               <hr>
                               &copy; Copyright 2020, A Gerald Ssali Holdings Company</p>
                            </div>
-                           <!-- <div class="text-center d-flex justify-content-between mt-4">
-                              <p>Snippet by <a href="https://bootstrapious.com/snippets" class="font-italic text-muted">
-                                    <u>Boostrapious</u></a></p>
-                           </div> -->
+
                         </form>
                      </div>
                   </div>
