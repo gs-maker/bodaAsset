@@ -15,6 +15,7 @@ mongoose.set("useFindAndModify", false);
 //       console.log('succesfully connected to database')
 //    })
 
+
 const uri = "mongodb+srv://gssali:QqGBM7aOlrfLaeDl@cluster0.k5vaq.mongodb.net/bodaBanja?retryWrites=true&w=majority";
 mongoose
 	.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
