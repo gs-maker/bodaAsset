@@ -8,11 +8,14 @@ server.use("/static", express.static(path.join(__dirname, "public")));
 
 // mongodb connection
 const mongoose = require("mongoose");
-// mongoose.set("useFindAndModify", false);
-// mongoose.connect("mongodb://localhost:27017/bodaAsset", { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
-// 	if (err) throw error;
-// 	console.log("succesfully connected to database");
-// });
+mongoose.set("useFindAndModify", false);
+// mongoose.connect('mongodb://localhost:27017/bodaAsset',
+//    { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+//       if (err) throw error;
+//       console.log('succesfully connected to database')
+//    })
+
+
 const uri = "mongodb+srv://gssali:QqGBM7aOlrfLaeDl@cluster0.k5vaq.mongodb.net/bodaBanja?retryWrites=true&w=majority";
 mongoose
 	.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
